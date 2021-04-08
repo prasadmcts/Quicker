@@ -1,0 +1,20 @@
+# Env Configs
+
+DEV:
+    EnvName: development
+    CreditLimitsInputCsvPath: ./data/input/CreditLimits.csv
+    CreditLimitsOutputCsvPath: ./data/output/CreditLimits.csv
+TST:
+    EnvName: Test
+    CreditLimitsInputCsvPath: ./data/input/CreditLimits.csv
+    CreditLimitsOutputCsvPath: ./data/output/CreditLimits.csv
+PROD: 
+    EnvName: production
+    # RootDir: /data/input/
+    # CreditLimitsInputCsvPath: ${PROD.RootDir}CreditLimits.csv"  # TODO: Not working
+    CreditLimitsInputCsvPath: ./data/input/CreditLimits.csv
+    CreditLimitsOutputCsvPath: ./data/output/CreditLimits.csv
+test:
+    EnvName: UnitTesting
+    CreditLimitsInputCsvPath: ./data/input/CreditLimits.csv
+    CreditLimitsOutputCsvPath: ./data/output/CreditLimits.csv
