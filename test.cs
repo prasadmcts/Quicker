@@ -1,3 +1,23 @@
+public class Foo {
+
+    private Handler _h;
+
+    public Foo(Handler h)
+    {
+        _h = h;
+    }
+
+    public void Bar(int i)
+    {
+        _h.AsyncHandle(CalcOn(i));
+    }
+
+    private SomeResponse CalcOn(int i)
+    {
+        ...;
+    }
+}
+==================
 var mock = new Mock<Handler>();
 SomeResponse result = null;
 mock.Setup(h => h.AsyncHandle(It.IsAny<SomeResponse>()))
