@@ -29,3 +29,16 @@ Assert.NotNull(result);
 
 ==================
 mock.Setup(h => h.AnsyncHandle(It.Is<SomeResponse>(response => response != null)));
+==================
+delegate void DoSomethingCallback(ref string value);
+
+var newValue = "This is the new referenced value";
+mock.Setup(p => p.DoSomething(It.Ref<string>.IsAny))
+    .Callback(new DoSomethingCallback((ref string value) => value = newValue));
+
+==================
+coreMethodsMock
+  .Setup(m => m.PushPageModel<It.IsSubtype<SecondPageModel>>(
+    It.Is<bool>(b => b)))
+  .Returns(Task.CompletedTask)
+  .Verifiable();
