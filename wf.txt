@@ -1,0 +1,12 @@
+https://stackoverflow.com/questions/10013159/mongodb-setdefaultvalue-is-not-working-why
+
+The default value is used during deserialization to assign a value to a field or property IF the document being deserialized doesn't have a value for that field or property.
+
+If you create an object in memory with a null value for the Title property then a null will be stored in the database. Just because Title is null doesn't mean it's going to be replaced with the default value when the document is saved.
+
+-----------
+
+Removed from Mongo DB and which get i got defalt value
+-------
+
+ cm.MapMember(c => c.Mobile).SetIgnoreIfNull(true).SetDefaultValue("9986730631");
