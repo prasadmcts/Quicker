@@ -8,7 +8,7 @@ async function run() {
     try {
         MongoClient.connect(uri, function (err, db) {
 
-            const dbo = db.db("1Mos");
+            const dbo = db.db("myDb");
 
             // Here you get your lines from your .txt file
             //let line_to_execute = 'dbo.collection("users").findOne({}, (err, res)=>{console.log(res)});';
