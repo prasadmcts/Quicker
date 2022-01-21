@@ -46,3 +46,25 @@ export default class LikeButton extends Component {
         );
     }
 }
+
+
+==========================
+import React, {useState} from "react";
+import "./style.css";
+
+export default function App() {
+  const [countObj, setCountObj] = useState({count: 100, isClicked: false});
+  const handleLike = () => {
+    if (countObj.isClicked) {
+      setCountObj({count: countObj.count-1, isClicked: false});
+    } else {
+      setCountObj({count: countObj.count+1, isClicked: true});
+    }
+  }
+  return (
+    <div>
+      Count: {countObj.count}
+      <button onClick={handleLike}>LIKE</button>
+    </div>
+  );
+}
