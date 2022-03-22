@@ -68,3 +68,35 @@ export default function App() {
     </div>
   );
 }
+
+=======================
+ import { useState } from "react";
+import "./styles.css";
+
+export default function App() {
+  const [likes, setLikes] = useState({
+    count: 100,
+    isLiked: false
+  });
+
+  const updateLikes = () => {
+    setLikes((data) => {
+      const newCount = data.isLiked ? data.count - 1 : data.count + 1;
+      return {
+        count: newCount,
+        isLiked: !data.isLiked
+      };
+    });
+  };
+
+  return (
+    <div className="App">
+      <LikeButton {...likes} updateLikes={updateLikes} />
+    </div>
+  );
+}
+
+const LikeButton = ({ count, updateLikes }) => {
+  return <button onClick={() => updateLikes()}>{count} likes</button>;
+};
+   
